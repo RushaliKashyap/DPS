@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/red"
+    android:orientation="vertical"
+    tools:context=".signup">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" School Application Form"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"/>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <EditText
+            android:id="@+id/student"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:background="@drawable/round_edittext"
+            android:hint="         Student Name"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+        <EditText
+            android:id="@+id/father"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:layout_gravity="center"
+            android:background="@drawable/round_edittext"
+            android:hint="        Father's Name"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/mother"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/round_edittext"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:hint="       Mother's Name"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/adhar"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:background="@drawable/round_edittext"
+            android:hint="     Aadhar Id No."
+            android:drawableLeft="@drawable/ic_baseline_credit_card_24"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/round_edittext"
+            android:hint="       Email Id"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/ic_baseline_mail_24"
+            android:textSize="20dp"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"/>
+
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_edittext"
+            android:drawableLeft="@drawable/ic_baseline_calendar_today_24"
+            android:hint="    dd/mm/yy"
+            android:textSize="20dp">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/occupation"
+            android:layout_width="350dp"
+            android:padding="5dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_baseline_work_24"
+            android:background="@drawable/round_edittext"
+            android:hint="     Father's Occupation" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category :"
+                android:layout_marginTop="20dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"/>
+
+            <Spinner
+                android:layout_marginTop="20dp"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:popupBackground="@color/white"
+                android:id="@+id/spinner"
+                />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:hint="     Address"
+            android:drawableLeft="@drawable/ic_baseline_add_location_alt_24"
+            android:background="@drawable/round_edittext"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:hint="     city"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/ic_baseline_location_city_24"
+            android:background="@drawable/round_edittext"
+            android:layout_gravity="center"/>
+        <TextView
+
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text=" Select Gender :"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15sp">
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"/>
+
+
+
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:text="Submit"
+            android:background="@drawable/rounded_button"
+            android:layout_marginRight="20dp" />
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
