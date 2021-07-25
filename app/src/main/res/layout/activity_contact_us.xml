@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2D2D2D"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    tools:context=".Contact_us">
+
+
+
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:text="Any Query? Please Contact !! "
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/profilestyle"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/profiledit"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="       Phone No   = 01642221435 "/>
+
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/profiledit"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="       Reception No   = 01642221455 "/>
+
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/profiledit"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="      Office No   = 01642561435 "/>
+
+
+
+
+</LinearLayout>
+
+</LinearLayout>

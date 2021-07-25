@@ -1,6 +1,7 @@
 package com.example.schoolmanagement2;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,11 +9,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         card4 = findViewById(R.id.card4);
         card5 = findViewById(R.id.card5);
         card6 = findViewById(R.id.card6);
-        tool = findViewById(R.id.toolbar);
+        tool = findViewById(R.id.tool);
+        setSupportActionBar(tool);
+
 
 
         Boy = findViewById(R.id.boy);
@@ -55,10 +59,9 @@ public class MainActivity extends AppCompatActivity {
         textView3 = findViewById(R.id.feesStructure);
         textView4 = findViewById(R.id.timeTable);
         textView5 = findViewById(R.id.Result);
-        leftIcon = findViewById(R.id.leftIcon);
-        rightIcon = findViewById(R.id.rightIcon);
+        leftIcon = tool.findViewById(R.id.leftIcon);
+        //rightIcon = tool.findViewById(R.id.rightIcon);
         title = findViewById(R.id.title);
-       // setSupportActionBar(tool);
 
 
 
@@ -112,13 +115,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rightIcon.setOnClickListener(new View.OnClickListener() {
+        /*rightIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"You Clicked in right Icon",Toast.LENGTH_SHORT).show();
             }
         });
-        title.setText("School Management");
+        title.setText("School Management");*/
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_menu_book_24);
+        tool.setOverflowIcon(drawable);
 
 
 
@@ -128,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu,menu);
-        return super.onCreateOptionsMenu(menu);
+        return true;
 
 
     }
@@ -139,16 +144,23 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.item1)
         {
             Toast.makeText(MainActivity.this,"About us Selected",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this,About_us.class);
+            startActivity(intent);
         }
         if(id == R.id.item2)
         {
             Toast.makeText(MainActivity.this,"Contact us Selected",Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(MainActivity.this,Contact_us.class);
+            startActivity(intent);
         }
 
         if(id == R.id.item3)
         {
             Toast.makeText(MainActivity.this,"Notification",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this,Notification.class);
+            startActivity(intent);
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }
