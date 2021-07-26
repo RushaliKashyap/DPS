@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         textView3 = findViewById(R.id.feesStructure);
         textView4 = findViewById(R.id.timeTable);
         textView5 = findViewById(R.id.Result);
-        leftIcon = tool.findViewById(R.id.leftIcon);
+      //  leftIcon = tool.findViewById(R.id.leftIcon);
         //rightIcon = tool.findViewById(R.id.rightIcon);
         title = findViewById(R.id.title);
 
@@ -108,12 +108,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        leftIcon.setOnClickListener(new View.OnClickListener() {
+     /* leftIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"You Clicked in leftIcon",Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         /*rightIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         });
         title.setText("School Management");*/
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_menu_book_24);
-        tool.setOverflowIcon(drawable);
+       // tool.setOverflowIcon(drawable);
 
 
 
