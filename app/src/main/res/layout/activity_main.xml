@@ -8,26 +8,20 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="#2D2D2D">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#2D2D2D">
+            android:layout_height="60dp"
+            >
 
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="20dp">
 
-                <ImageView
-                    android:id="@+id/leftIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_baseline_arrow_back_24" />
+
+
 
                 <TextView
                     android:id="@+id/title"
@@ -35,25 +29,18 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_toEndOf="@+id/leftIcon"
-                    android:layout_toRightOf="@+id/leftIcon"
+
+
+
                     android:text="School Management"
                     android:textColor="#ffffff"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp" />
 
-                <ImageView
-                    android:id="@+id/rightIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_baseline_menu_book_24" />
-            </RelativeLayout>
+
 
         </RelativeLayout>
-
+    </androidx.appcompat.widget.Toolbar>
 
 
     <LinearLayout

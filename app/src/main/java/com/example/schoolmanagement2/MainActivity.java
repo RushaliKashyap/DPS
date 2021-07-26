@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         });
         title.setText("School Management");*/
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_baseline_menu_book_24);
-       // tool.setOverflowIcon(drawable);
+        tool.setOverflowIcon(drawable);
 
 
 
