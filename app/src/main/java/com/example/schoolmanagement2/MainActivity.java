@@ -16,6 +16,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,loginpage.class);
+                Intent intent = new Intent(MainActivity.this,signup.class);
                 startActivity(intent);
             }
         });
@@ -160,6 +163,13 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,"Notification",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this,Notification.class);
             startActivity(intent);
+        }
+        if (id==R.id.item4){
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(MainActivity.this,"SignedOut as " +FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this,loginpage.class);
+            startActivity(intent);
+
         }
         return true;
     }
