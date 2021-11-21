@@ -1,6 +1,7 @@
 package com.example.schoolmanagement2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterPage extends AppCompatActivity {
 
@@ -69,6 +71,18 @@ public class RegisterPage extends AppCompatActivity {
                                              // Sign in success, update UI with the signed-in user's information
                                              Log.d(" Firebase-User ", "createUserWithEmail:success");
                                              FirebaseUser user = mAuth.getCurrentUser();
+                                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                     .setDisplayName(""+FullName)
+                                                     .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+                                                     .build();
+                                             user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                 @Override
+                                                 public void onComplete(@NonNull Task<Void> task) {
+                                                     if (task.isSuccessful()) {
+                                                         Log.d("Display name", "User profile updated.");
+                                                     }
+                                                 }
+                                             });
                                              //  updateUI(user);
                                              Toast.makeText(getApplicationContext(),"You Succussfully Registed ",Toast.LENGTH_SHORT).show();
                                              Intent intent = new Intent(getApplicationContext(),loginpage.class);
