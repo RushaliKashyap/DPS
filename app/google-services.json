@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "407154585877",
+    "project_id": "dpsr-1de23",
+    "storage_bucket": "dpsr-1de23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407154585877:android:a38681a326f0ba77ac791c",
+        "android_client_info": {
+          "package_name": "com.example.schoolmanagement2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407154585877-07f0gb3rt0onmb1an6h6d5ihffcqsbcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsT1LXaPz9lAvneh3o5OvsE0E6QCUFO-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407154585877-07f0gb3rt0onmb1an6h6d5ihffcqsbcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407154585877:android:59f23fabb8e92bd0ac791c",
+        "android_client_info": {
+          "package_name": "www.dps.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407154585877-07f0gb3rt0onmb1an6h6d5ihffcqsbcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsT1LXaPz9lAvneh3o5OvsE0E6QCUFO-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407154585877-07f0gb3rt0onmb1an6h6d5ihffcqsbcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
