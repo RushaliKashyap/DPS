@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,7 +22,7 @@ public class signup extends AppCompatActivity {
     EditText dateTxt,name,father,mother, Id,occupation,address,city,email;
     Button submit;
     private int mDate,mMonth,mYear;
-
+    RadioGroup radioGroup;
     Spinner spn;
     String[] category = {"Select","General","OBC","SC","ST"};
 
@@ -39,7 +41,7 @@ public class signup extends AppCompatActivity {
         city = findViewById(R.id.city);
         submit = findViewById(R.id.button);
         email = findViewById(R.id.email);
-
+        radioGroup =findViewById(R.id.radio);
         spn = findViewById(R.id.spinner);
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(signup.this, android.R.layout.simple_spinner_item,category);
@@ -102,6 +104,21 @@ public class signup extends AppCompatActivity {
                 String DateOfBirth = dateTxt.getText().toString();
                 String Occupation = occupation.getText().toString();
                 String City = city.getText().toString();
+                final String[] gender = new String[1];
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        RadioButton male=group.findViewById(R.id.male);
+                        RadioButton female=group.findViewById(R.id.female);
+                        if(male.isChecked()){
+                            gender[0] ="Male";
+                        }
+                        else {
+                            gender[0] ="Female";
+                        }
+                    }
+                });
+
 
                 if (userName.equals("") || FatherName.equals("") || Email.equals("") || Address.equals("") || DateOfBirth.equals("") ||
                         MotherName.equals("") || Occupation.equals("") || city.equals("")) {

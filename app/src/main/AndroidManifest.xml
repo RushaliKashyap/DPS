@@ -29,13 +29,13 @@
         <activity android:name=".FeesStructure" />
         <activity android:name=".TimeTable" />
         <activity android:name=".signup" />
-        <activity android:name=".LoginForm" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginForm" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,7 @@ public class RegisterPage extends AppCompatActivity {
     EditText edit1,edit2,edit3,edit4,edit5;
     TextView text;
     Button button;
+    RadioGroup radioGroup;
 
 
     @Override
@@ -30,6 +33,7 @@ public class RegisterPage extends AppCompatActivity {
         edit5 = findViewById(R.id.edit5);
         text = findViewById(R.id.text);
         button = findViewById(R.id.button);
+        radioGroup=findViewById(R.id.radio);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +43,7 @@ public class RegisterPage extends AppCompatActivity {
                 String Email = edit3.getText().toString();
                 String Password = edit4.getText().toString();
                 String Conform = edit5.getText().toString();
+                final String[] gender = new String[1];
                  if(FullName.equals("") || UserName.equals("") || Email.equals("") || Password.equals("") || Conform.equals(""))
                  {
                      Toast.makeText(getApplicationContext(),"Please fill  above the column carefully!!",Toast.LENGTH_SHORT).show();
@@ -49,7 +54,19 @@ public class RegisterPage extends AppCompatActivity {
                      Intent intent = new Intent(getApplicationContext(),loginpage.class);
                      startActivity(intent);
                  }
-
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        RadioButton male=group.findViewById(R.id.male);
+                        RadioButton female=group.findViewById(R.id.female);
+                        if(male.isChecked()){
+                            gender[0] ="Male";
+                        }
+                        else {
+                            gender[0]="Female";
+                        }
+                    }
+                });
 
             }
         });
