@@ -13,7 +13,12 @@
         <activity android:name=".Contact_us" />
         <activity android:name=".About_us" />
         <activity android:name=".RegisterPage" />
-        <activity android:name=".loginpage" />
+        <activity android:name=".loginpage" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Profile" />
         <activity android:name=".Result" />
         <activity android:name=".Tenthclass" />
@@ -30,10 +35,7 @@
         <activity android:name=".TimeTable" />
         <activity android:name=".signup" />
         <activity android:name=".LoginForm" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".MainActivity">
         </activity>
