@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+    private FirebaseAuth mAuth;
 
     CardView card1,card2,card3,card4,card5,card6;
     ImageView profile,form,fees,Attendence,result,TimeTable,leftIcon,rightIcon;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mAuth=FirebaseAuth.getInstance();
         card1 = findViewById(R.id.card1);
         card2 = findViewById(R.id.card2);
         card3 = findViewById(R.id.card3);
@@ -165,8 +165,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         if (id==R.id.item4){
-            FirebaseAuth.getInstance().signOut();
-            Toast.makeText(MainActivity.this,"SignedOut as " +FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),Toast.LENGTH_LONG).show();
+    FirebaseUser currentuser=mAuth.getCurrentUser();
+            mAuth.signOut();
+
+
+           Toast.makeText(MainActivity.this,"SignedOut as "+currentuser.getDisplayName(),Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this,loginpage.class);
             startActivity(intent);
 
