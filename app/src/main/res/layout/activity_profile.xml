@@ -44,6 +44,7 @@
 
         <EditText
             android:id="@+id/text2"
+            android:enabled="false"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_gravity="center"

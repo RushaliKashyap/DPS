@@ -1,14 +1,22 @@
 package com.example.schoolmanagement2;
 
-public class UserDetail {
-    public UserDetail() {
-    }
-
+public class UserRead {
     String fullName;
     String userName;
     String email;
     String pass;
     String gender;
+
+    public UserRead() {
+    }
+
+    public UserRead(String fullName, String userName, String email, String pass, String gender) {
+        this.fullName = fullName;
+        this.userName = userName;
+        this.email = email;
+        this.pass = pass;
+        this.gender = gender;
+    }
 
     public String getFullName() {
         return fullName;
@@ -47,14 +55,6 @@ public class UserDetail {
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public UserDetail(String fullName, String userName, String email, String pass, String gender) {
-        this.fullName = fullName;
-        this.userName = userName;
-        this.email = email;
-        this.pass = pass;
         this.gender = gender;
     }
 }

@@ -21,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterPage extends AppCompatActivity {
 
@@ -29,6 +31,8 @@ public class RegisterPage extends AppCompatActivity {
     Button button;
     RadioGroup radioGroup;
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
+    public String gender="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class RegisterPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
         mAuth = FirebaseAuth.getInstance();
-
+        mDatabase= FirebaseDatabase.getInstance().getReference();
         edit1 = findViewById(R.id.edit1);
         edit2 = findViewById(R.id.edit2);
         edit3 = findViewById(R.id.edit3);
@@ -45,7 +49,19 @@ public class RegisterPage extends AppCompatActivity {
         text = findViewById(R.id.text);
         button = findViewById(R.id.button);
         radioGroup=findViewById(R.id.radio);
-
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton male=group.findViewById(R.id.male);
+                RadioButton female=group.findViewById(R.id.female);
+                if(male.isChecked()){
+                    gender +="Male";
+                }
+                else {
+                    gender +="Female";
+                }
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +71,7 @@ public class RegisterPage extends AppCompatActivity {
                 String Password = edit4.getText().toString();
                 String Conform = edit5.getText().toString();
                 String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-                final String[] gender = new String[1];
+
                  if(FullName.equals("") || UserName.equals("") || Email.equals("") || Password.equals("") || Conform.equals(""))
                  {
                      Toast.makeText(getApplicationContext(),"Please fill  above the column carefully!!",Toast.LENGTH_SHORT).show();
@@ -83,6 +99,12 @@ public class RegisterPage extends AppCompatActivity {
                                                      }
                                                  }
                                              });
+
+
+
+                                             UserDetail userDetail=new UserDetail(FullName,UserName,Email,Password,gender);
+                                             mDatabase.child("user").child(user.getUid()).setValue(userDetail);
+
                                              //  updateUI(user);
                                              Toast.makeText(getApplicationContext(),"You Succussfully Registed ",Toast.LENGTH_SHORT).show();
                                              Intent intent = new Intent(getApplicationContext(),loginpage.class);
@@ -104,19 +126,7 @@ public class RegisterPage extends AppCompatActivity {
 
 
                  }
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        RadioButton male=group.findViewById(R.id.male);
-                        RadioButton female=group.findViewById(R.id.female);
-                        if(male.isChecked()){
-                            gender[0] ="Male";
-                        }
-                        else {
-                            gender[0]="Female";
-                        }
-                    }
-                });
+
 
 
 
